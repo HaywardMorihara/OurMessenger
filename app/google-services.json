@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "851326269340",
+    "firebase_url": "https://our-messenger.firebaseio.com",
+    "project_id": "our-messenger",
+    "storage_bucket": "our-messenger.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:851326269340:android:220dbcd34362c34e",
+        "android_client_info": {
+          "package_name": "com.nathanielmorihara.ourmessenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "851326269340-p1ijjmbf9iqkbd50fjktdjs96hl7l2lr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nathanielmorihara.ourmessenger",
+            "certificate_hash": "ac624f9da26992b2625c07f6d24b1628af3954af"
+          }
+        },
+        {
+          "client_id": "851326269340-3evtqb351q9pgk0mv2gba1v4jeqlo3vg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5EkLlOevHIvNp8YZ8wTqNf_5gtW_G4Ow"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "851326269340-3evtqb351q9pgk0mv2gba1v4jeqlo3vg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
