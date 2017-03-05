@@ -20,9 +20,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
+//import com.pusher.android.PusherAndroid;
+//import com.pusher.android.notifications.PushNotificationRegistration;
 
-import java.text.DateFormat;
-import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,6 +35,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+//        PusherAndroid pusher = new PusherAndroid("842cc7f23fd95e599af8");
+//        PushNotificationRegistration nativePusher =  pusher.nativePusher();
+//        try {
+//            nativePusher.registerFCM(this);
+//        }catch(Exception e) {
+//
+//        }
+//        nativePusher.subscribe("kittens");
 
         if(FirebaseAuth.getInstance().getCurrentUser() == null) {
             //Start sign in/sign up activity
