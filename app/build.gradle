@@ -33,7 +33,6 @@ dependencies {
     compile 'com.google.firebase:firebase-messaging:10.2.0'
     compile 'com.android.support:design:25.1.0'
     compile 'com.firebaseui:firebase-ui:1.2.0'
-    //compile 'com.pusher:pusher-websocket-android:0.2.1'
     testCompile 'junit:junit:4.12'
 }
 
