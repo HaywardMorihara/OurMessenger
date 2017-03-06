@@ -6,23 +6,6 @@ import android.util.Log;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
 
-import org.apache.http.Header;
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import static android.R.attr.data;
-
 /**
  * Created by Nathaniel on 3/4/2017.
  */
@@ -60,6 +43,6 @@ public class FirebaseIDService extends FirebaseInstanceIdService {
      */
     private void sendRegistrationToServer(String token) {
         String body = "{\"userName\":\"nathaniel\",\"id\":\""+token+"\"}";
-        new RegisterTask().execute(body);
+        new PostTask().execute("/register",body);
     }
 }

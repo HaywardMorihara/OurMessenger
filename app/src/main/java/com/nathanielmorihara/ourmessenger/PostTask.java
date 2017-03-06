@@ -17,18 +17,18 @@ import java.io.IOException;
  * Created by Nathaniel on 3/5/2017.
  */
 
-public class RegisterTask extends AsyncTask<String, String, String> {
+public class PostTask extends AsyncTask<String, String, String> {
     @Override
     protected String doInBackground(String... body) {
         //TODO: Error handling
         //TODO: Use a different library? Deprecated
         HttpClient httpclient = new DefaultHttpClient();
-        HttpPost httppost = new HttpPost("https://ourmessenger.herokuapp.com/register");
+        HttpPost httppost = new HttpPost("https://ourmessenger.herokuapp.com"+body[0]);
         try {
             httppost.addHeader("Content-Type","application/json");
-            httppost.setEntity(new StringEntity(body[0]));
+            httppost.setEntity(new StringEntity(body[1]));
             HttpResponse response = httpclient.execute(httppost);
-            Log.d("RegisterTask", "Registered");
+            Log.d("PostTask", "Post request to " + body[0] + " with body: " + body[1] + " sent");
             return response.toString();
         } catch (ClientProtocolException e) {
             return e.toString();

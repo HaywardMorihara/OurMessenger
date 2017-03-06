@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences idStorage = getSharedPreferences(PREFS,0);
         String deviceId = idStorage.getString("deviceId","NoIdFound");
         String body = "{\"userName\":\"nathaniel\",\"id\":\""+deviceId+"\"}";
-        new RegisterTask().execute(body);
+        new PostTask().execute("/register",body);
 
         if(FirebaseAuth.getInstance().getCurrentUser() == null) {
             //Start sign in/sign up activity
@@ -81,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
                 input.setText("");
 
                 //TODO: Send request to server to initiate notification on the other phone
+                String body = "{\"userName\":\"nathaniel\"}";
+                new PostTask().execute("/messageSent",body);
             }
         });
     }
