@@ -1,7 +1,7 @@
 package com.nathanielmorihara.ourmessenger;
 
 import android.content.Intent;
-import android.icu.text.SimpleDateFormat;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
     //Should this come from somewhere?
     private static final int SIGN_IN_REQUEST_CODE = 10;
+    //This shouldn't be in two places
+    private static final String PREFS = "FirebaseID";
 
     private FirebaseListAdapter<ChatMessage> adapter;
 
@@ -32,6 +34,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        SharedPreferences idStorage = getSharedPreferences(PREFS,0);
+        String deviceId = idStorage.getString("deviceId","NoIdFound");
+        String body = "{\"userName\":\"nathaniel\",\"id\":\""+deviceId+"\"}";
+        new RegisterTask().execute(body);
 
         if(FirebaseAuth.getInstance().getCurrentUser() == null) {
             //Start sign in/sign up activity
@@ -72,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
                         );
                 //Clear the input
                 input.setText("");
+
+                //TODO: Send request to server to initiate notification on the other phone
             }
         });
     }
@@ -133,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
                 //Get references to the views of message.xml
                 TextView messageText = (TextView) v.findViewById(R.id.message_text);
                 TextView messageUser = (TextView) v.findViewById(R.id.message_user);
+                //TODO
                 //TextView messageTime = (TextView) v.findViewById(R.id.message_time);
 
                 //Set their text
@@ -140,6 +150,7 @@ public class MainActivity extends AppCompatActivity {
                 messageUser.setText(model.getMessageUser());
 
                 //Format the date before showing it
+                //TODO
                 //messageTime.setText(DateFormat.getDateInstance().format(new Date(model.getMessageTime())));
             }
         };

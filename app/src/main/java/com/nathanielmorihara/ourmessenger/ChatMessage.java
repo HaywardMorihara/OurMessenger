@@ -10,6 +10,7 @@ public class ChatMessage {
 
     private String messageText;
     private String messageUser;
+    //TODO: Time of messages
     //private long messageTime;
 
     public ChatMessage(String messageText, String messageUser) {
@@ -17,6 +18,7 @@ public class ChatMessage {
         this.messageUser = messageUser;
 
         //initialize to current time
+        //TODO
         //messageTime = new Date().getTime();
     }
 
@@ -38,6 +40,7 @@ public class ChatMessage {
         this.messageUser = messageUser;
     }
 
+    //TODO
 //    public long getMessageTime() {
 //        return getMessageTime();
 //    }
